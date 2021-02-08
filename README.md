@@ -22,7 +22,7 @@ Run the `standalone.sh` file of the keycloak server to set up the environment.
 5. Save Changes
 6. Go into the Installation Tab, select format as `Keycloak OIDC JSON`, download and replace the file in the Django app.
 
-## Modifying the `keycloak` package to access
+## Modifying the `keycloak` package to access roles
 Locate the package (if you use linux and pipenv it should be in `~/.local/share/virtualenvs/<env name>/<python version>/site-packages/keycloak/`. We have to modify the file that is in `extensions/django.py`.
 
 Jump into line 43 near the `# fetch user info` comment. And add the following lines:
@@ -36,4 +36,5 @@ request.session["decoded_token"] = decoded_token
 
 This will let us acccess the token from the `request` on the django views. We could modify these lines further to give access just to the roles or other user data. This token is refreshed when the user logs in/out. So changes in permission require the user to log in back again to take effect.
 
-
+## This example
+In this django example we need users with the roles `normaluser`, `moderator` and `administrator`. These roles will make the paragraphs in `test` be different for different kinds of users. Use keycloak to manage roles. 
