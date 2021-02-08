@@ -1,0 +1,16 @@
+<html>
+	<body>
+		{% if "normaluser" in roles %}
+			<p>Visible for normaluser</p>
+		{% endif %}
+		{% if "moderator" in roles %}
+			<p>Visible for moderator</p>
+		{% endif %}
+		{% if "administrator" in roles %}
+			<p>Visible for administrator</p>
+		{% endif %}
+		<a href="/">home</a>
+		<br>
+		<a href="/logout">logout</a>
+	</body>
+</html>

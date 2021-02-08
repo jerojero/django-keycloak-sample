@@ -1,0 +1,10 @@
+<html>
+	{{ user }}
+	<br>
+	<br>
+	{{ decoded_token }}
+	<br>
+	<br>
+	<a href="/post_list">test</a>
+	<a href="/logout">logout</a>
+</html>
