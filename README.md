@@ -38,3 +38,5 @@ This will let us acccess the token from the `request` on the django views. We co
 
 ## This example
 In this django example we need users with the roles `normaluser`, `moderator` and `administrator`. These roles will make the paragraphs in `test` be different for different kinds of users. Use keycloak to manage roles. 
+
+These roles are configured, for this example, to be on realm-level. But it is also possible to access the client-level roles if necessary. The modifications to the package could incorporate that. 
