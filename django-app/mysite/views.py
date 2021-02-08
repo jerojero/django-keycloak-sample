@@ -8,7 +8,7 @@ def howdy(request):
     return render(request, "howdy.html", {"user":user, "decoded_token":decoded_token})
 
 def post_list(request):
-    roles = request.session["decoded_token"]["resource_access"]["djangoclient"]["roles"]
+    roles = request.session["decoded_token"]["realm_access"]["roles"]
     return render(request, 'post_list.html', {"roles":roles})
 
 def logout(request):
